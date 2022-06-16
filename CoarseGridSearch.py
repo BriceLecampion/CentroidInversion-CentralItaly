@@ -202,3 +202,17 @@ for i1 in range(len(cx_)):
 
 plt.plot(my_grid[:,-2],my_grid[:,-1],'.')
 plt.show()
+
+id_min=np.where(my_grid[:,-1] == my_grid[:,-1].min())
+
+# forward simul for the lowest val.
+minpt=my_grid[id_min[0][0]]
+
+sources = np.array([[1, minpt[0],minpt[1],minpt[2]]])
+ap = Axitra(vel_model, station_coor, sources, fmax=2.5, duration=90, latlon=False, axpath=axitra_path)
+ap = moment.green(ap)  # Compute green's function
+hist_c = np.array([[1,minpt[7],minpt[3],minpt[4],minpt[5],0.,0.,minpt[6]]])
+t, vx_1, vy_1, vz_1 = moment.conv(ap, hist_c, source_type=4, t0=0.05,unit=2)  # convolve with DC moment tensor source fction
+delta_t = t[2] - t[1]
+
+rs=rmsAllStations(plot=True)
