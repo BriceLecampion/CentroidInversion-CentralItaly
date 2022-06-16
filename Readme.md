@@ -26,7 +26,8 @@ Latitude 	Longitude 	Date 	Depth 	Magnitude 	Description 	Related Pages
 
 Folders
 -------
-+ axitra - contain the source of axitra (with the makefile corrected to work with gcc)
++ axitra - contain the source of axitra (with the makefile corrected to work with gcc)  - NOT commited/Pushed to this \
+git repo - git clone axitra, make the changes & compile yourself (with axitra folder in that location)
 + data  - contain miniseed data + network inventory xml 
 
 Scripts
