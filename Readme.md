@@ -41,5 +41,6 @@ Scripts
 What is still missing
 ----------
 - geo-plot of all stations and hypocenter 
-- ... report
-
+- ... refine the domain space for the search
+- ... compare with ingv results..., add "better" stations
+- ... report etc.
